@@ -18,7 +18,7 @@
 # When setting this field to "incubator", please uncomment the
 # incubator_lesson_site, incubator_pre_survey, and incubator_post_survey
 # lines further down this file and add the URL to the relevant lesson site.
-carpentry: "swc"
+carpentry: "cp"
 
 # This option is currently only needed for
 # Data Carpentry and Software Carpentry workshops.
@@ -52,7 +52,7 @@ pilot: false
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Workshop Title"
+title: "Data Analysis and Visualisation in Python on ARCHER2"
 
 #------------------------------------------------------------
 # Incubator workshop settings (only relevant for workshops teaching a lesson
@@ -77,7 +77,7 @@ title: "Workshop Title"
 # template. Please do not modify this. If you are teaching 
 # a custom set of lessons or a single lesson, use a custom 
 # schedule.
-kind: "workshop"
+kind: "lesson"
 
 # Magic to make URLs resolve both locally and on GitHub.
 # See https://help.github.com/articles/repository-metadata-on-github-pages/.
@@ -153,3 +153,6 @@ exclude:
 
 # Turn on built-in syntax highlighting.
 highlighter: rouge
+
+# ARCHER2 project ID
+gid: ta000
