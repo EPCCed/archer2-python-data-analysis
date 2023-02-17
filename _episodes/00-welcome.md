@@ -31,7 +31,7 @@ to this collaborative document on the course page. We will use it for a number o
 for example, it may be used during exercises and instructors and helpers may put useful information
 or links in the Etherpad that help or expand on the material being taught. If you have useful
 information to share with the class then please do add it to the Etherpad. At the end of the course,
-we take a copy of the information in the Etherpad, remove any personally-identifiable information 
+we take a copy of the information in the Etherpad, remove any personally-identifiable information
 and post this on the course archive page so you should always be able to come back and find any
 information you found useful.
 
