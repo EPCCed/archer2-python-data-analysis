@@ -20,6 +20,24 @@ collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g.
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
+<h2 id="description">Description</h2>
+
+In this lesson, we will take the methods we have learnt in the previous sessions
+and use them on ARCHER2, the UK's National Supercomputer.
+
+As part of this, we will briefly cover:
+
+* what is ARCHER2,
+* how to connect to ARCHER2,
+* setting Python up on ARCHER2,
+* how to run jobs on the ARCHER2 backend.
+
+Our goal here is to run the exercises from the first part
+of the Python course on ARCHER2's data analysis nodes.
+
+<hr/>
+
+
 {% comment %}
 HEADER
 
