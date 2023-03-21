@@ -294,13 +294,4 @@ More information on the software available on ARCHER2 can be found in
 
 ARCHER2 also supports the use of [Singularity containers](https://docs.archer2.ac.uk/user-guide/containers/) for single-node and multi-node jobs.
 
-> ## What about your research?
->
-> Speak to your neighbour about your planned use of ARCHER2. Given what you now know about the system,
-> what do you think the biggest opportunities are for your research in using ARCHER2? What do you think
-> the largest challenges are going to be for you?
-> 
-> Write a few sentences in the course Etherpad describing the opportunities and challenges you discussed.
-{: .challenge}
-
 {% include links.md %}
