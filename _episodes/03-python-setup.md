@@ -283,3 +283,5 @@ packages and any dependencies.
 
 At this point we're almost ready to run our exercises on ARCHER2. In the next episode,
 we'll look at how to submit a job to the ARCHER2 backend to do so.
+
+{% include links.md %}
