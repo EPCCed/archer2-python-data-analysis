@@ -96,6 +96,14 @@ instead. These are simply shell scripts, with some extra syntax at the beginning
 saying what resources are needed, that go in order through the steps needed to
 complete the work.
 
+> ## How to write a text file on ARCHER2
+> You can write text files locally on your own machine and copy it to ARCHER2,
+> but most people will edit them directly on the system using a text editor.
+> `emacs`, `vi`/`vim` and `nano` are all available. If you aren't experienced with
+> any of these, `nano` is quite simple and the fastest to learn.
+{: .callout}
+
+
 The job script that we will use in this course looks like the following:
 
 ```
@@ -197,11 +205,119 @@ script. If we hadn't run `module load cray-python`, the system Python
 installation would be used instead; if we hadn't set these three environment
 variables, Python would have no idea where to find matplotlib or plotnine.
 
-At this point there is only one thing left to do, and that's to run our script,
-so we start Python and tell it to run `my_analysis_script.py`.
+At this point there is only one thing left to do, and that's to run the Python
+script itself, so we start Python and tell it to run `my_analysis_script.py`.
 
 ## Running and controlling a job
 
 The next step is to actually run a job. Let's take our imaginary job script
 above and save it in a file somewhere in our work directories. Its name doesn't
-really matter: the most important thing is that it makes sense to you.
+really matter: the most important thing is that it makes sense to you. One
+choice that can help you is to give the files a `.slurm` extension, so you can
+at least pick out which files are job scripts. From there you might choose to
+use `run.slurm`, `submit.slurm`, or perhaps you would like to include some
+information about the particular job in the name -- for example,
+`submit-T100.slurm`, `submit-T200.slurm` and so on if the different jobs vary
+some parameter *T*.
+
+With the script saved to file, you can submit the job to the queue by running
+the `sbatch` command as follows:
+
+```
+sbatch submit.slurm
+```
+{: .language-bash}
+
+```
+Submitted batch job 3327070
+```
+{: .output}
+
+> ## Problems submitting the job
+> If Slurm thinks that some of the `#SBATCH` options you set in your script
+> don't make sense, it might refuse to accept your job and give an error
+> message. Check with the instructor or one of the helpers for assistance,
+> providing the error you receive and your full job script so they can help
+> you fix the problem.
+{: .callout}
+
+Once your job has been submitted, you can check the status of your job in the
+queue:
+
+```
+squeue --me
+```
+{: .language-bash}
+
+```
+             JOBID PARTITION        NAME    USER ST       TIME  NODES NODELIST(REASON)
+           3327087    serial  python-job   auser  R       0:01      1 dvn01
+```
+{: .output}
+
+In the output above, the job has the `R` status, as it started running almost
+straight away. If the queue's a bit busier when you submit, you might see it
+pending with the `PD` status. In this case it might take a while for the job
+to start running, but as long as you kept the `time` option in your script to
+only a few tens of minutes or less it shouldn't be long.
+
+Sometimes you realise that you've made a mistake in your script, or perhaps you
+don't need a job to run any more for some other reason. This could be while it's
+running or while it's still pending. In either case, you can cancel it with the
+`scancel` command, giving the ID of the job you want to cancel:
+
+```
+scancel 3327087
+```
+{: .language-bash}
+
+The only people who can cancel your jobs are you yourself and the system
+administrators, and the latter only in extremely unusual circumstances. If
+there were a need to cancel your jobs, in almost all cases the ARCHER2 service
+desk would contact you directly and ask if you are able to do so.
+
+Any output to `STDOUT` and `STDERR` -- that is, output and error messages that
+would normally appear in your terminal if you ran the script in an interactive
+session -- will instead be written to a file called `slurm-<jobid>.out`. In the
+example job submission here, that means you would expect to find a file called
+`slurm-3327087.out` in the same directory as the job script. You can check this
+file while the job is running to make sure that it's working as you can expect,
+and after the job has run it can help you determine whether it ended as you
+expected it should.
+
+`cat` will dump the entire contents of a text file to the terminal's output:
+
+```
+cat slurm-3327087.out
+```
+{: .language-bash}
+
+`less` allows you to scroll and search through a file:
+
+```
+less slurm-3327087.out
+```
+{: .language-bash}
+
+While a set of text is open with `less`, press `q` to quit back to the prompt.
+The up and down arrow keys move you line by line through the text. `u` and `d`
+will move you up and down a half-page at a time. `g` returns to the text's
+start, and `G` to the end. Finally, typing `/` followed by some text, then
+pressing the return key, will search for that text. You can move forwards and
+backwards between found instances of that text with `n` and `N`.
+
+If your job ran correctly to completion, you should find your output just where
+you would expect to find it if you'd run the Python script interactively.
+
+## Summary
+
+Putting everything together, most people will work with Python on ARCHER2 as
+follows:
+
+1. Set up Python script, get input data in place.
+2. Write job script to run Python script on that data.
+3. Submit script as job to the queue.
+4. Wait for job to complete.
+5. Download output to local system or use as input for a second round of analysis.
+
+{% include links.md %}
