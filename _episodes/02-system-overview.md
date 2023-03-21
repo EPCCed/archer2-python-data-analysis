@@ -128,8 +128,11 @@ directory will be at:
 ```
 
 > ## Jobs can't see your data?
-> If your jobs are having trouble accessing your data make sure you have placed it on Work
-> rather than Home. Remember, the home file systems are not visible from the compute nodes.
+> In this course we'll be using the data visualisation nodes in the `serial` partition and
+> these have access to both the home and work file systems. If you are using the compute
+> nodes in the `standard` partition for parallel work, you will need to remember that everything
+> needed for your job will have to be on work as home is not mounted. If your jobs are having
+> trouble accessing your data, this will be the first thing to check.
 {: .callout}
 
 You can view your work file system use and quota through SAFE in the same way as described 
