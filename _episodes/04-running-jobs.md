@@ -224,7 +224,7 @@ With the script saved to file, you can submit the job to the queue by running
 the `sbatch` command as follows:
 
 ```
-sbatch submit.slurm
+auser@ln01:/work/{{site.gid}}/{{site.gid}}/auser/jobdir> sbatch submit.slurm
 ```
 {: .language-bash}
 
@@ -245,7 +245,7 @@ Once your job has been submitted, you can check the status of your job in the
 queue:
 
 ```
-squeue --me
+auser@ln01:/work/{{site.gid}}/{{site.gid}}/auser/jobdir> squeue --me
 ```
 {: .language-bash}
 
@@ -267,7 +267,7 @@ running or while it's still pending. In either case, you can cancel it with the
 `scancel` command, giving the ID of the job you want to cancel:
 
 ```
-scancel 3327087
+auser@ln01:/work/{{site.gid}}/{{site.gid}}/auser/jobdir> scancel 3327087
 ```
 {: .language-bash}
 
@@ -288,14 +288,14 @@ expected it should.
 `cat` will dump the entire contents of a text file to the terminal's output:
 
 ```
-cat slurm-3327087.out
+auser@ln01:/work/{{site.gid}}/{{site.gid}}/auser/jobdir> cat slurm-3327087.out
 ```
 {: .language-bash}
 
 `less` allows you to scroll and search through a file:
 
 ```
-less slurm-3327087.out
+auser@ln01:/work/{{site.gid}}/{{site.gid}}/auser/jobdir> less slurm-3327087.out
 ```
 {: .language-bash}
 
