@@ -33,22 +33,24 @@ At this point you should be able to log in to ARCHER2, install up your custom
 Python packages, and run jobs.
 
 Remember that you will need to use a job script similar to the one we looked at
-in the previous lesson. Feel free to copy that script and make any changes you
-feel are necessary before submitting the job to Slurm with `sbatch`. Keep track
-of it in the scheduler using `squeue` and by checking the `slurm-<jobid>.out`
-file and if necessary cancel it with `scancel`.
+in the previous lesson. Feel free to copy that script and save it into a
+directory you create in your ARCHER2 work directories, along with a Python
+script to do some useful work and any input data required. Make any changes you
+feel are necessary to that job script before submitting it to Slurm with
+`sbatch`. Keep track of it in the scheduler using `squeue` and by checking the
+`slurm-<jobid>.out` file, and if necessary cancel it with `scancel`.
 
-Once a job has completed successfully, you can transfer it to your machine using
-a tool like `scp` or `rsync`. If you are connecting with MobaXterm from Windows,
-you should be able to use the client's built-in SFTP file transfer using the pane
-on the left hand side of the GUI.
+Once a job has completed successfully, you can transfer any output to your
+machine using a tool like `scp` or `rsync`. If you are connecting with MobaXterm
+from Windows, you should be able to use the client's built-in SFTP file transfer
+using the pane on the left hand side of the GUI.
 
 If you'd prefer to check text output on ARCHER2 itself, remember that you can
 use the command line tools `cat` or `more` or `less`, or else open the files
 directly with an editor like `vim`. If you log in to ARCHER2 with X11 forwarding
 enabled (using either the `-X` or `-Y` options to `ssh`, or enabling it as an
 option in MobaXterm), you can also use ImageMagick's `display` tool to view
-images file after you've loaded the module:
+images after you've loaded the module:
 
 ```
 auser@ln01:~> module load imagemagick
