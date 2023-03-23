@@ -6,6 +6,7 @@
 {% endcomment %}
 <div class="syllabus">
   <h2 id="schedule">Schedule</h2>
+  <hr/>
 
   {% assign lesson_number = 0 %}
   {% assign day = 0 %}
@@ -20,7 +21,7 @@
     {% if multiday %}<td class="col-md-1"></td>{% endif %}
     <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}"></td>
     <td class="col-md-3"><a href="{{ relative_root_path }}{% link setup.md %}">Setup</a></td>
-    <td class="col-md-7">Download files required for the lesson</td>
+    <td class="col-md-7">Connect to ARCHER2 so you are ready for this lesson.</td>
   </tr>
   {% for episode in site.episodes %}
     {% if episode.start %} {% comment %} Starting a new day? {% endcomment %}
