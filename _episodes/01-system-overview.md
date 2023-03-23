@@ -14,6 +14,22 @@ keypoints:
 - "The system is based on standard Linux with command line access."
 ---
 
+## Architecture
+
+ARCHER2 is the UK's National Supercomputing Service. The machine itself is an
+HPE Cray EX system consisting of a number of different node types. The ones
+visible to users are:
+
+* Login nodes
+* Compute nodes
+* Data analysis (pre-/post- processing) nodes
+
+All of the node types have the same processors: AMD EPYC Zen2 7742, 2.25GHz,
+64-cores. All nodes are dual socket nodes so there are 128 cores per node.
+
+{% include figure.html url="" max-width="80%" file="/fig/archer2_architecture.png" 
+alt="ARCHER2 architecture diagram" caption="ARCHER2's system layout, showing the different node types and file systems." %}
+
 ## Connecting using SSH
 
 The login address for the full 23-cabinet ARCHER2 system is
@@ -80,21 +96,6 @@ Finally, if you have access to a storage facility with GriFTP enabled, you may a
 More information on data transfer mechanisms can be found in the ARCHER2 User and Best Practice Guide:
 
 * [Data management and transfer](https://docs.archer2.ac.uk/user-guide/data/)
-
-## Architecture
-
-The ARCHER2 HPE Cray EX system consists of a number of different node types. The ones visible
-to users are:
-
-* Login nodes
-* Compute nodes
-* Data analysis (pre-/post- processing) nodes
-
-All of the node types have the same processors: AMD EPYC Zen2 7742, 2.25GHz, 64-cores. All nodes
-are dual socket nodes so there are 128 cores per node.
-
-{% include figure.html url="" max-width="80%" file="/fig/archer2_architecture.png" 
-alt="ARCHER2 architecture diagram" caption="ARCHER2 architecture" %}
 
 ## Compute nodes
 
