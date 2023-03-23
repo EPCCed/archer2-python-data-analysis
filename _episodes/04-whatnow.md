@@ -1,9 +1,9 @@
 ---
 title: "What now?"
 teaching: 5
-exercises: 90
+exercises: 160
 questions:
-- "What happens if I use ARCHER2 to run one of the exercises?"
+- "Can I manage to use ARCHER2 to run one of the exercises?"
 objectives:
 - "Run an exercise or Python script of your own on ARCHER2."
 keypoints:
