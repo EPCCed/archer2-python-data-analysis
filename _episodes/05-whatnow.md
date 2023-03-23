@@ -3,7 +3,7 @@ title: "What now?"
 teaching: 5
 exercises: 90
 questions:
-- "How can I use ARCHER2 for my own work?"
+- "What happens if I use ARCHER2 to run one of the exercises?"
 objectives:
 - "Run an exercise or Python script of your own on ARCHER2."
 keypoints:
