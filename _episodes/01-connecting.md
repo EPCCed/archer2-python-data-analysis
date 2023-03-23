@@ -67,11 +67,14 @@ and associate them with your account:
 
 ARCHER2 supports several data transfer mechanisms. The one you choose depends
 on the amount and structure of the data you want to transfer and where you want to transfer
-the data to. The three main options are:
+the data to. The two main options are:
 
 * `scp`: The standard way to transfer small to medium amounts of data (in the order of MBs or GBs) off ARCHER2 to any other location
 * `rsync`: Used if you need to keep small to medium datasets (in the order of MBs or GBs) synchronised between two different locations
-* *Globus Online*: Used to transfer large amounts of data (in the order of TBs) to other sites which are Globus Online enabled
+
+If you are using MobaXterm on Windows you will be able to move data using the GUI. Under the hood, this uses the same protocols.
+
+Finally, if you have access to a storage facility with GriFTP enabled, you may also wish to use this to move data quickly to and from ARCHER2.
 
 More information on data transfer mechanisms can be found in the ARCHER2 User and Best Practice Guide:
 
