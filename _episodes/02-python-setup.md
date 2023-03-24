@@ -32,7 +32,7 @@ ARCHER2 software and hardware, meaning it is able to use the high performance
 numerical and communication libraries on the system.
 
 Cray Python is accessible via the modules system. After logging in, run the
-following commmand:
+following command:
 
 ```
 auser@ln01:~> module load cray-python
@@ -73,7 +73,7 @@ to do this ourselves.
 ## What is pip?
 
 Modern Python installations are designed to be flexible, allowing you to add
-extra pacakges as you require them. For that reason, several tools are available
+extra packages as you require them. For that reason, several tools are available
 which make managing packages very simple, automating their download and
 installation from the Internet, installing any necessary dependencies to use
 them, upgrading to new versions, and, if necessary, their uninstallation. If you
@@ -246,7 +246,7 @@ we need to perform the necessary setup.
 
 ## Adding the extra packages for this course
 
-Finally, let's put all of above together and actually install the packages we
+Finally, let's put all of the above together and actually install the packages we
 need to run the exercises from earlier on ARCHER2.
 
 Starting from logging in, so we have a clean environment, we'll firstly load

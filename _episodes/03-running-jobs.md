@@ -63,7 +63,7 @@ auser@ln01:~> squeue --me
 Of course, we haven't actually run any jobs yet, so you'll see an empty list if
 you check yourself with `squeue`.
 
-For any jobs listes, you'll see its ID, its name, the length of time it's been
+For any jobs listed, you'll see its ID, its name, the length of time it's been
 running and its status. Most jobs will have the status `R`, meaning 'running',
 or `PD`, meaning 'pending'. Running jobs will also list the names of the nodes
 they're using, while pending jobs will list the reason they haven't run yet.
