@@ -24,7 +24,7 @@ visible to users are:
 * Compute nodes
 * Data analysis (pre-/post- processing) nodes
 
-All of the node types have the same processors: AMD EPYC Zen2 7742, 2.25GHz,
+All of the node types have the same processors: AMD EPYC<sup>TM</sup> Zen2 7742, 2.25GHz,
 64-cores. All nodes are dual socket nodes so there are 128 cores per node.
 
 {% include figure.html url="" max-width="80%" file="/fig/archer2_architecture.png" 
@@ -109,14 +109,14 @@ both batch jobs and interactive jobs.
 
 Compute node summary (with comparison to ARCHER):
 
-| | ARCHER2 | ARCHER |
-|-|---------|--------|
-| Processors | 2x AMD EPYC Zen2 (Rome) 7742, 2.25 GHz, 64-core | 2x Intel E5-2697 v2, 2.7 GHz, 12-core | 
-| Cores per node | 128 | 24 |
-| NUMA | 8 NUMA regions per node, 16 cores per NUMA region | 2 NUMA regions per node, 12 cores per NUMA region |
-| Memory Capacity | 256/512 GB DDR 3200, 8 memory channels | 64/128 GB DDR 1666, 4 memory channels |
-| Memory Bandwidth | >380 GB/s per node | >119 GB/s per node |
-| Interconnect Bandwidth | 25 GB/s per node bi-directional | 15 GB/s per node bi-directional |
+|                        | ARCHER2                                           | ARCHER                                            |
+| ---------------------- | -------                                           | ------                                            |
+| Processors             | 2x AMD EPYC Zen2 (Rome) 7742, 2.25 GHz, 64-core   | 2x Intel E5-2697 v2, 2.7 GHz, 12-core             |
+| Cores per node         | 128                                               | 24                                                |
+| NUMA                   | 8 NUMA regions per node, 16 cores per NUMA region | 2 NUMA regions per node, 12 cores per NUMA region |
+| Memory Capacity        | 256/512 GB DDR 3200, 8 memory channels            | 64/128 GB DDR 1666, 4 memory channels             |
+| Memory Bandwidth       | >380 GB/s per node                                | >119 GB/s per node                                |
+| Interconnect Bandwidth | 25 GB/s per node bi-directional                   | 15 GB/s per node bi-directional                   |
 
 ## Storage
 
@@ -131,8 +131,8 @@ There are four different storage systems available on ARCHER2:
 
 The home file systems are available on the login nodes only and are designed for the storage
 of critical source code and data for ARCHER2 users. They are backed-up regularly offsite for
-disaster recovery purposes - restoration of accidentally deleted files is not supported. There is a
-total of 1 PB usable space available on the home file systems.
+disaster recovery purposes - restoration of accidentally deleted files is not supported.
+There is a total of 1 PB usable space available on the home file systems.
 
 All users have their own directory on the home file systems at:
 
@@ -201,7 +201,7 @@ directory will be at:
 > these have access to both the home and work file systems. If you are using the compute
 > nodes in the `standard` partition for parallel work, you will need to remember that everything
 > needed for your job will have to be on work as home is not mounted. If your jobs are having
-> trouble accessing your data, this will be the first thing to check.
+> trouble accessing your data, this is the first thing to check.
 {: .callout}
 
 You can view your work file system use and quota through SAFE in the same way as described 
@@ -265,7 +265,7 @@ Data on the RDFaaS is only visible on the login nodes, so should be copied to wo
 
 ### Sharing data with other users
 
-Both the home and work file systems have special directories that allow you to share data 
+Both the *home* and *work* file systems have special directories that allow you to share data 
 with other users. There are directories that allow you to share data only with other users
 in the same project and directories that allow you to share data with users in other projects.
 
@@ -327,34 +327,34 @@ job submission scripts. The scheduling software is Slurm.
 As well as the hardware and system software, HPE Cray supply the Cray Programming Environment which
 contains:
 
-| Compilers | GCC, Cray Compilers (CCE), AMD Compilers (AOCC) |
-| Parallel libraries | Cray MPI (MPICH2-based), OpenSHMEM, Global Arrays |
+| Compilers                          | GCC, Cray Compilers (CCE), AMD Compilers (AOCC)                          |
+| Parallel libraries                 | Cray MPI (MPICH2-based), OpenSHMEM, Global Arrays                        |
 | Scientific and numerical libraries | BLAS/LAPACK/BLACS/ScaLAPACK (Cray LibSci, AMD AOCL), FFTW3, HDF5, NetCDF |
-| Debugging and profiling tools | gdb4hpc, valgrind4hpc, CrayPAT + others |
-| Optimised Python 3 environment | numpy, scipy, mpi4py, dask |
-| Optimised R environment | standard packages (including "parallel") |
+| Debugging and profiling tools      | gdb4hpc, valgrind4hpc, CrayPAT + others                                  |
+| Optimised Python 3 environment     | numpy, scipy, mpi4py, dask                                               |
+| Optimised R environment            | standard packages (including "parallel")                                 |
 
 The largest differences from ARCHER are:
    - Addition of optimised Python 3 and R environments
-   - Lack of Intel compilers
+   - Absence of Intel compilers
 
 On top of the Cray-provided software, the EPCC ARCHER2 CSE service have installed a wide range 
 of modelling and simulation software, additional scientific and numeric libraries, data analysis
 tools and other useful software. Some examples of the software installed are:
 
-| Research area | Software |
-|-|-|
-| Materials and molecular modelling | CASTEP, ChemShell, CP2K, Elk, LAMMPS, NWChem, ONETEP, Quantum Espresso, VASP |
-| Engineering | Code_Saturne, FEniCS, OpenFOAM |
-| Biomolecular modelling | GROMACS, NAMD |
-| Earth system modelling | MITgcm, Met Office UM, Met Office LFRic, NEMO |
-| Scientific libraries | ARPACK, Boost, Eigen, ELPA, GSL, HYPRE, METIS, MUMPS, ParaFEM, ParMETIS, PETSc, Scotch, SLEPC, SUNDIALS, Zoltan |
-| Software tools | CDO, CGNS, NCL, NCO, Paraview, PLUMED, PyTorch, Tensorflow, VMD, VTST |
+| Research area                     | Software                                                                                                        |
+| -------------                     | --------                                                                                                        |
+| Materials and molecular modelling | CASTEP, ChemShell, CP2K, Elk, LAMMPS, NWChem, ONETEP, Quantum Espresso, VASP                                    |
+| Engineering                       | Code\_Saturne, FEniCS, OpenFOAM                                                                                 |
+| Biomolecular modelling            | GROMACS, NAMD                                                                                                   |
+| Earth system modelling            | MITgcm, Met Office UM, Met Office LFRic, NEMO                                                                   |
+| Scientific libraries              | ARPACK, Boost, Eigen, ELPA, GSL, HYPRE, METIS, MUMPS, ParaFEM, ParMETIS, PETSc, Scotch, SLEPC, SUNDIALS, Zoltan |
+| Software tools                    | CDO, CGNS, NCL, NCO, Paraview, PLUMED, PyTorch, Tensorflow, VMD, VTST                                           |
 
 > ## Licensed software
 > For licensed software installed on ARCHER2, users are expected to bring their own licences to
 > the service with them. The ARCHER2 service does not provide software licences for use by 
-> users. Access to licensed software is available via three different mechnisms:
+> users. Access to licensed software is available via three different mechanisms:
 >   - Access control groups - for software that does not support a licence server
 >   - Local licence server - for software that requires a licence server running on the ARCHER2 system
 >   - Remote licence server - to allow software to call out to a publicly-accessible licence server
